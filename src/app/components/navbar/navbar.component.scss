@@ -1,0 +1,39 @@
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Menú superior en pantalla grande */
+.desktop-menu {
+  display: flex;
+  gap: 10px;
+}
+
+/* Contenedor general */
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenido principal */
+mat-sidenav-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+/* Mostrar el menú lateral solo en móviles */
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none; // Ocultar menú superior en móviles
+  }
+
+  .sidenav-container {
+    display: flex; // Asegurar que el contenido se muestre
+  }
+}
