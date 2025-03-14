@@ -1,10 +1,34 @@
 import { Component } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faYoutube,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  styleUrls: ['./footer.component.scss'],
+  imports: [MatToolbarModule, FontAwesomeModule, MatIconModule],
 })
-export class FooterComponent {}
+export class FooterComponent {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faFacebook,
+      faInstagram,
+      faLinkedin,
+      faYoutube,
+      faWhatsapp
+    );
+  }
+}

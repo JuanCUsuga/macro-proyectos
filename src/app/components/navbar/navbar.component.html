@@ -1,35 +1,36 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggleSidenav()" *ngIf="isMobile">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Macro Proyectos</span>
-
-  <span class="spacer"></span>
-
-  <!-- Menú en pantalla grande -->
-  <nav class="desktop-menu" *ngIf="!isMobile">
-    <a mat-button routerLink="/inicio">Inicio</a>
-    <a mat-button routerLink="/productos">Productos</a>
-    <a mat-button routerLink="/contacto">Contacto</a>
-  </nav>
-</mat-toolbar>
-
-<!-- Contenedor del menú lateral en móviles -->
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav [mode]="'over'" [opened]="false" *ngIf="isMobile">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/inicio" (click)="toggleSidenav()">Inicio</a>
-      <a mat-list-item routerLink="/productos" (click)="toggleSidenav()"
-        >Productos</a
-      >
-      <a mat-list-item routerLink="/contacto" (click)="toggleSidenav()"
-        >Contacto</a
-      >
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <!-- Contenido principal -->
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Macro Proyectos</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="toggleSidenav()"
+      aria-controls="navbarNav"
+      [attr.aria-expanded]="isSidenavOpen"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse"
+      [ngClass]="{ show: isSidenavOpen, 'd-lg-flex': true }"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" (click)="closeSidenav()">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos" (click)="closeSidenav()"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacto" (click)="closeSidenav()"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

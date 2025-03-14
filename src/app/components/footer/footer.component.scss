@@ -1,0 +1,68 @@
+.footer {
+  background: #1e2a38; // Azul oscuro
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .footer-info {
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+  }
+
+  .footer-social a {
+    color: white;
+    font-size: 24px;
+    transition:
+      transform 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    /* Colores originales de cada red social */
+    &[href*='facebook']:hover {
+      color: #1877f2;
+    }
+
+    &[href*='instagram']:hover {
+      color: #e1306c;
+    }
+
+    &[href*='linkedin']:hover {
+      color: #0a66c2;
+    }
+
+    &[href*='youtube']:hover {
+      color: #ff0000;
+    }
+
+    &[href*='wa.me']:hover {
+      color: #0de63c;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+}
